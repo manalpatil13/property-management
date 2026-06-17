@@ -1,24 +1,25 @@
 # Estate — Property Rental Management System
 
-**Version 2.0** — Authentication
+**Version 3.0** — Image upload & redesigned dashboard
 
-Building on the core CRUD foundation, this version adds secure access.
-Users now sign up and log in, passwords are hashed, and every property is
-tied to the owner who created it.
+This version brings the interface to life. Property owners can now upload
+photos for each listing, and the whole app has been redesigned into a clean,
+modern dashboard with at-a-glance portfolio stats.
 
-## What's new in v2
-- JWT-based authentication (signup / login)
-- Passwords hashed with bcrypt — never stored in plain text
-- Protected API routes (Bearer token required)
-- Per-user data isolation — owners only see their own properties
+## What's new in v3
+- Image upload — photos saved to `static/uploads/` and shown on cards
+- Redesigned "Estate" dashboard: forest + brass theme, Bricolage + Inter
+- Stats band: total properties, available, rented, monthly rent
+- Image-led property cards with status badges
+- Demo account seeded with sample properties
 
-## Carried over from v1
-- FastAPI + SQLite backend with full property CRUD
-- HTML/CSS frontend
+## Carried over
+- JWT authentication & per-user data (v2)
+- Full property CRUD on FastAPI + SQLite (v1)
 
 ## Stack
 - Backend: Python, FastAPI, SQLAlchemy
-- Auth: JWT (python-jose), bcrypt (passlib)
+- Auth: JWT, bcrypt
 - Database: SQLite
 - Frontend: HTML + CSS
 
@@ -29,8 +30,8 @@ python -m venv .venv
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
-Open http://127.0.0.1:8000 and create an account.
+Open http://127.0.0.1:8000
+Demo login: **demo@rental.app** / **demo1234**
 
 ## Roadmap
-- v3 — Image upload & redesigned dashboard
-- v4 — Tenants, agreements & payment records
+- v4 — Tenants, agreements & payment records (full system)
